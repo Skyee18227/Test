@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Placeholder</title>
+    <title>Modern Test Page</title>
+
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -20,14 +21,16 @@
             text-align: center;
             background: white;
             padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             max-width: 400px;
             width: 90%;
+            animation: fadeIn 0.8s ease;
         }
 
         h1 {
             margin-bottom: 10px;
+            color: #333;
         }
 
         p {
@@ -36,15 +39,42 @@
 
         button {
             margin-top: 20px;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
             font-size: 16px;
+            background: #4facfe;
+            color: white;
+            transition: 0.3s;
         }
 
         button:hover {
-            opacity: 0.9;
+            transform: scale(1.05);
+            background: #3a8efc;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .message {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #28a745;
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -52,14 +82,20 @@
 <body>
 
     <div class="container">
-        <h1>Placeholder Page</h1>
-        <p>This is a simple HTML file for testing purposes.</p>
+        <h1>Modern Test Page 🚀</h1>
+        <p>Click the button to test interaction.</p>
+
         <button onclick="showMessage()">Click Me</button>
+
+        <div id="msg" class="message">
+            ✅ Test successful! Your HTML is working perfectly.
+        </div>
     </div>
 
     <script>
         function showMessage() {
-            alert('Test successful! Your HTML file is working.');
+            const msg = document.getElementById("msg");
+            msg.style.display = "block";
         }
     </script>
 
